@@ -15,10 +15,10 @@ public class Buttons {
     private static int LEFT_STICK_Y = 1;
     private static int RIGHT_STICK_X = 0; // 2 for joystick, 0 for keyboard
 
-    public static JoystickButton joystickAButton = new JoystickButton(joystick, A);
-    public static JoystickButton joystickBButton = new JoystickButton(joystick, B);
-    public static JoystickButton joystickXButton = new JoystickButton(joystick, X);
-    public static JoystickButton joystickYButton = new JoystickButton(joystick, Y);
+    public static JoystickButton joystickAButton = new JoystickButton(joystick, B);
+    public static JoystickButton joystickBButton = new JoystickButton(joystick, A);
+    public static JoystickButton joystickXButton = new JoystickButton(joystick, Y);
+    public static JoystickButton joystickYButton = new JoystickButton(joystick, X);
     public static JoystickButton joystickLeftBumperButton = new JoystickButton(joystick, LEFT_BUMPER);
     public static JoystickButton joystickRightBumperButton = new JoystickButton(joystick, RIGHT_BUMPER);
 
