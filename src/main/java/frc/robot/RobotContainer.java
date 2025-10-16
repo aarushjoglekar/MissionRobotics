@@ -26,9 +26,9 @@ public class RobotContainer {
     // is scheduled over it.
     drivetrain.setDefaultCommand(getDriverCommand());
 
-    Buttons.joystickAButton.onTrue(new SetArmPosition(ArmPosition.DOWN));
-    Buttons.joystickYButton.onTrue(new SetArmPosition(ArmPosition.UP));
-    Buttons.joystickBButton.onTrue(new LineFollowing(1, 0.09, 0.05, 0.1));
+    Buttons.keyboardZButton.onTrue(new SetArmPosition(ArmPosition.DOWN));
+    Buttons.keyboardXButton.onTrue(new SetArmPosition(ArmPosition.UP));
+    Buttons.keyboardCButton.onTrue(new LineFollowing(1, 0.09, 0.05, 0.1));
   }
 
   /**
