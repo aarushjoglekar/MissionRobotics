@@ -26,6 +26,7 @@ public class ReflectiveSensor extends SubsystemBase {
 
     @Override
     public void periodic() {
-        //Add any prints here
+        // System.out.println(leftValue());
+        // System.out.println(rightValue());
     }
 }

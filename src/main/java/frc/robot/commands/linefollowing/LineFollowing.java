@@ -17,11 +17,11 @@ public class LineFollowing extends Command {
   private Timer timer;
 
   public static boolean leftDetects(ReflectiveSensor sensor, double colorValue) {
-    return sensor.leftValue() > colorValue;
+    return sensor.leftValue() > 0.67;
   }
 
   public static boolean rightDetects(ReflectiveSensor sensor, double colorValue) {
-    return sensor.rightValue() > colorValue;
+    return sensor.rightValue() > 0.56;
   }
 
   public LineFollowing(double forwardSpeed, double turnForwardSpeed, double rotateSpeed, double colorValue) {
@@ -80,5 +80,6 @@ public class LineFollowing extends Command {
   public void end(boolean interrupted) {
     drivetrain.arcadeDrive(0, 0);
     timer.stop();
+    System.out.println("STOP");
   }
 }

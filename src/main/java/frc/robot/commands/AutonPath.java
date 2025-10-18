@@ -12,11 +12,11 @@ import frc.robot.subsystems.Arm.ArmPosition;
 
 public class AutonPath extends SequentialCommandGroup {
   //This is a sequential command group - all the commands in the addCommands block will run sequentially
-  private static final double forwardSpeed = 0.8;
+  private static final double forwardSpeed = 0.6;
   private static final double turnSpeed = 0.6;
-  private static final double turnForwardSpeed = 0.9;
-  private static final double rotateSpeed = 0.5;
-  private static final double colorValue = 0.67;
+  private static final double turnForwardSpeed = 0.5;
+  private static final double rotateSpeed = 0.25;
+  private static final double colorValue = 0.6;
 
   public AutonPath() {
     addCommands(
@@ -25,9 +25,16 @@ public class AutonPath extends SequentialCommandGroup {
       new LineFollowing(forwardSpeed, turnForwardSpeed, rotateSpeed, colorValue),
       new TurnUntilLine(turnSpeed * -1, colorValue),
       new LineFollowing(forwardSpeed, turnForwardSpeed, rotateSpeed, colorValue),
+      new TurnUntilLine(turnSpeed * 1, colorValue),
+      new SetArmPosition(ArmPosition.UP),
+      new SetArmPosition(ArmPosition.DOWN),
+      new WaitCommand(0.3),
+      new LineFollowing(forwardSpeed, turnForwardSpeed, rotateSpeed, colorValue),
+      new TurnUntilLine(turnSpeed * 1, colorValue),
+      new LineFollowing(forwardSpeed, turnForwardSpeed, rotateSpeed, colorValue),
       new TurnUntilLine(turnSpeed * -1, colorValue),
       new SetArmPosition(ArmPosition.UP),
-      new WaitCommand(0.3),
+      new SetArmPosition(ArmPosition.DOWN),
       new LineFollowing(forwardSpeed, turnForwardSpeed, rotateSpeed, colorValue)
     );
   }
