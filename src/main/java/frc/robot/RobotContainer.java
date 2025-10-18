@@ -5,8 +5,11 @@
 package frc.robot;
 
 import frc.robot.commands.AutonPath;
+import frc.robot.commands.SetArmPosition;
+import frc.robot.commands.linefollowing.LineFollowing;
 import frc.robot.commands.ArcadeDrive;
 import frc.robot.subsystems.Drivetrain;
+import frc.robot.subsystems.Arm.ArmPosition;
 import edu.wpi.first.wpilibj2.command.Command;
 
 
@@ -22,6 +25,9 @@ public class RobotContainer {
     // Default command is arcade drive. This will run unless another command
     // is scheduled over it.
     drivetrain.setDefaultCommand(getDriverCommand());
+    Buttons.keyboardZButton.onTrue(new SetArmPosition(ArmPosition.UP));
+    Buttons.keyboardXButton.onTrue(new SetArmPosition(ArmPosition.DOWN));
+    Buttons.keyboardCButton.onTrue(new LineFollowing())
   }
 
   /**
