@@ -50,3 +50,5 @@ public class Arm extends SubsystemBase {
     motor.setAngle(armPos.getAngle());
   }
 }
+
+
